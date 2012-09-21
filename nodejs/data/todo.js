@@ -1,7 +1,7 @@
 /* todo.js - simple read/write module */
 
 var fs = require('fs');
-var folder = './data/';
+var folder = process.cwd()+'/data/';
 
 module.exports = main;
 
@@ -34,26 +34,26 @@ function main(action, arg1, arg2) {
 }
 
 function getList(arg) {
-    var collection, item, list, i, x;
+    var coll, item, list, i, x;
 
-    collection = [];
+    coll = [];
     list = fs.readdirSync(folder);
     for(i=0,x=list.length;i<x;i++) {
-        item = JSON.parse(fs.readfileSync(folder,list[i]));
+        item = JSON.parse(fs.readFileSync(folder+list[i]));
         if(arg) {
-            if(item.title.substring(arg)>-1) {
-                collection.push(item);
+            if(item.title.indexOf(arg)!=-1) {
+                coll.push(item);
             }
         }
         else {
-            collection.push(item);
+            coll.push(item);
         }
     }
-    return collection;
+    return coll;
 }
 
 function getItem(id) {
-    return JSON.parse(fs.readfileSync(folder+id));
+    return JSON.parse(fs.readFileSync(folder+id));
 }
 
 function addItem(item) {

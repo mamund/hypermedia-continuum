@@ -5,12 +5,14 @@ var todo = require('./todo.js');
 var port = (process.env.PORT||1337);
 
 function handler(req, res) {
-    var item = {};
+    var list, item;
+    
+    item = {};
     item.title = 'this is a test';
     item.done = false;
 
-    list = todo('add',item);
-    sendResponse(req, res, rtn);
+    list = todo('search','be');
+    sendResponse(req, res, list);
 }
 
 function sendResponse(req, res, list) {
