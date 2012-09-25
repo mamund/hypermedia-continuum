@@ -57,7 +57,8 @@ function getItem(id) {
 }
 
 function addItem(item) {
-    fs.writeFileSync(folder+makeId(), JSON.stringify(item));
+    item.id = makeId();
+    fs.writeFileSync(folder+item.id, JSON.stringify(item));
     return getList();
 }
 
