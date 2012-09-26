@@ -49,11 +49,8 @@ function handler(req, res) {
     m.id = '';
     m.search = '';
 
-    console.log('\nreq.url='+req.url);
-    inUrl = req.url.replace(m.host,'');
-    console.log('inUrl='+inUrl);
-
     // inspect incoming identifier
+    inUrl = req.url.replace(m.host,'');
     if(inUrl.indexOf(m.searchUrl)!==-1) {
         url = m.searchUrl;
 	m.search = inUrl.substring(m.searchUrl.length,255).replace('?text=','');
@@ -67,8 +64,6 @@ function handler(req, res) {
         url = inUrl;
     }
    
-    console.log('url='+url);
-
     // route request
     switch(url) {
     	case m.itemUrl:
@@ -177,12 +172,6 @@ function format(list) {
   for(i=0, x=list.length;i<x;i++) {
     data = [];
    
-    /* 
-    if(list[i].id) {
-      data[0] = {name : 'id', value : list[i].id};
-    }
-    */
-    
     if(list[i].title) {
       data[0] = {name : 'title', value : list[i].title};
     }
