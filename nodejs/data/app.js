@@ -1,4 +1,7 @@
-/* data-only server */
+/*
+ * object-style http connector
+ * 2012-09 (mca) : app.js
+ */ 
 
 var http = require('http');
 var todo = require('./todo.js');

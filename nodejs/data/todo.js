@@ -1,4 +1,7 @@
-/* todo.js - simple read/write module */
+/*
+ * to-do component
+ * 2012-09 (mca) : todo.js
+ */ 
 
 var fs = require('fs');
 var folder = process.cwd()+'/data/';
