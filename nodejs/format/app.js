@@ -1,6 +1,21 @@
 /*
- * object-style http connector
+ * message-style http connector
  * 2012-09 (mca) : app.js
+ *
+ * message format:
+ * {items : 
+ *   [
+ *     {
+ *       data : 
+ *       [
+ *         {name:"...", value:"..."},
+ *         ...
+ *         {name:"...", value:"..."}
+ *       ]
+ *     },
+ *     ...
+ *   ]
+ * }
  */ 
 
 var http = require('http');
