@@ -1,0 +1,1 @@
+[{"href":"http://localhost:1337/search?text={@text}","rel":"search"},{"href":"http://localhost:1337/?category=work","rel":"work"},{"href":"http://localhost:1337/?category=play","rel":"play"}]

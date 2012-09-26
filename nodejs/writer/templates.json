@@ -1,0 +1,1 @@
+[{"href":"http://localhost:1337/complete","rel":"complete","data":[{"name":"id","value":""}]},{"href":"http://localhost:1337/","rel":"additem","data":[{"name":"title","value":""},{"name":"category","value":""},{"name":"assignee","value":""}]}]
